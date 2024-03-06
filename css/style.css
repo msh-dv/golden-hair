@@ -7,6 +7,7 @@
   --darker-cyan: #1B8D34ff;
   --very-dark-blue: hsl(212, 21%, 14%);
   --dark-grayish-blue: hsl(228, 12%, 48%);
+  --cream-color:#F5D897ff;
   --white: #f6f9f0ff;
   --brown:#2E1D04ff;
   --monserrat: "Montserrat", sans-serif;
@@ -114,7 +115,12 @@ p.desc {
   all: unset;
 }
 
+
 @media(max-width: 768px){
+  h1{
+    font-size: 1.5rem;
+  }
+
   .main{
     grid-template-columns: 1fr;
     margin: 1rem auto;
@@ -138,20 +144,102 @@ header {
   align-items: center;
   justify-content: space-between;
   width:100%;
-  height: 70px;
+  height: 4.5rem;
   background-color: #2E1D04ff;
 }
 
 .main-title {
   font-family: var(--fraunces);
   color:#F5D897ff;
+  font-size: 1rem;
+}
+
+.container-2 {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-bar {
+  width: 100%;
+}
+
+.nav-items {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav-items ul, li{
+  padding: 0;
+  margin:0;
+  list-style: none;
+}
+
+.nav-items a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color:var(--cream-color);
+  font-family: 'Fraunces';
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 900px){
+  .nav-items a{
+    display: none;
+    font-size: 0.8rem;
+  }
+}
+
+
+.nav-items a:hover{
+  text-decoration: underline var(--cream-color);
+}
+
+.cart {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 svg {
-  width:1.5rem;
+  width:1.7rem;
   fill:#F5D897ff;
 }
 
+svg:hover {
+  width:1.9rem;
+}
+
+@media screen and (max-width: 900px){
+  svg {
+    width:1.2rem;
+    fill:#F5D897ff;
+  }
+
+  svg:hover {
+    width:1.5rem;
+  }
+}
+
+.logo-text-container {
+  width:auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
 .logo {
   height: 70px;
 }
@@ -216,4 +304,12 @@ svg {
 .estrellas {
   font-size:1.6rem;
   color: gold;
+}
+
+footer {
+  text-decoration: underline;
+  font-style: italic;
+  margin:2rem;
+  text-align: center;
+  height: 1rem;
 }
