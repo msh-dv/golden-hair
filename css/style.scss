@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --bg-color: #edf0e7;
+  --fg-color: #2a1f1e;
+  --fg-color-tp: #2a1f1e5a;
+  --main-color: #744826;
+  --accent-color: ##ebc501;
+
+  --golden-brown: #a0631bff;
+  --lion: #caa47aff;
+  --fawn: #f4bc7cff;
+  --champagne-pink: #f4e0d1ff;
+  --seashell: #fef2efff;
+  --tiffany-blue: #a5e5ceff;
+  --champagne-pink-2: #fee9d9ff;
+  --olivine: #9dc08fff;
+  --copper: #af7d42ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Inter";
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body {
+  color: var(--fg-color);
+  background-color: var(--seashell);
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  padding: 0 1em;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fg-color);
+  background-color: var(--champagne-pink-2);
+  border-bottom: 2px solid var(--fg-color-tp);
+
+  // & * {
+  //   border: 1px solid black;
+  // }
+
+  & nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    & #logo-title {
+      display: flex;
+      gap: 0.5em;
+
+      & #logo {
+        width: 4em;
+        height: 4em;
+
+        & svg {
+          width: 4em;
+          height: 4em;
+
+          & path {
+            fill: var(--main-color);
+          }
+        }
+      }
+
+      & #page-name {
+        font-size: 2em;
+        font-weight: 600;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    & #nav-links {
+      min-width: 22%;
+    }
+
+    & ul {
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & #menu {
+	cursor: pointer;
+	pointer-events: auto;
+        display: none;
+        width: 2.5em;
+        height: 2.5em;
+
+        & svg {
+          width: inherit;
+          height: inherit;
+        }
+      }
+
+      & li {
+        & a {
+          position: relative;
+          color: var(--fg-color);
+          text-decoration: none;
+          font-size: 1.3em;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--fg-color);
+            transition: 0.3s;
+            transform-origin: bottom left;
+            transform: scaleX(0);
+          }
+
+          &:hover::after {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      & #shop-bag {
+        position: relative;
+        width: 2.5em;
+        height: 2.5em;
+
+        & svg {
+          width: 2.5em;
+          height: 2.5em;
+          & path {
+            stroke: var(--fg-color);
+          }
+        }
+
+        & #product-count {
+          position: absolute;
+          top: 0;
+          right: -0.3em;
+          width: 1em;
+          height: 1em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & #bag-products {
+            pointer-events: none;
+            font-size: 0.8em;
+            color: var(--fg-color);
+            width: inherit;
+            height: inherit;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+  height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    & #nav-links {
+      & ul {
+        width: fit-content;
+        justify-content: center;
+        gap: 1em;
+        & #menu {
+          display: block;
+        }
+      }
+      & ul li {
+        display: none;
+      }
+    }
+  }
+}
