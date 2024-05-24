@@ -18,6 +18,18 @@
   --copper: #af7d42ff;
 }
 
+// #svg1 {
+//   width: 9em;
+//   height: 9em;
+//   position: absolute;
+//   right: 1em;
+//   top: calc(50% - 9em);
+
+//   & path{
+//     fill:var(--main-color);
+//   }
+// }
+
 *,
 *::before,
 *::after {
@@ -35,6 +47,16 @@ body {
   background-color: var(--seashell);
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
 #slide-menu {
@@ -167,7 +189,9 @@ body {
 }
 
 #header {
-  position: sticky;
+  z-index: 5;
+  width: 100%;
+  position: fixed;
   top: 0;
   padding: 0 1em;
   height: 4em;
@@ -175,7 +199,7 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--fg-color);
-  background-color: var(--champagne-pink-2);
+  background-color: var(--seashell);
   border-bottom: 2px solid var(--fg-color-tp);
 
   & nav {
@@ -203,7 +227,7 @@ body {
 
       & #page-name {
         font-size: 2em;
-        font-weight: 600;
+        font-weight: 700;
 
         display: flex;
         justify-content: center;
@@ -212,7 +236,7 @@ body {
     }
 
     & #nav-links {
-      min-width: 22%;
+      min-width: 20%;
     }
 
     & ul {
@@ -311,15 +335,44 @@ body {
 }
 
 section {
+  position: relative;
+  padding: 0 1em;
   height: 100vh;
+  // background-color: var(--seashell);
+  border-bottom: 2px solid var(--fg-color-tp);
 }
 
 #main-section {
-  background-color: var(--lion);
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/uuunion.svg);
+  // background: linear-gradient(45deg, var(--fawn), var(--seashell));
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-#second-section {
-  background-color: var(--copper);
+  & .main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    & .description {
+      display: flex;
+      flex-flow: column wrap;
+      gap: 1em;
+
+      & h2 {
+        font-size: 2.8em;
+      }
+
+      & p {
+        margin: 0;
+        font-size: 1.3em;
+	font-weight: 500;
+
+      }
+    }
+  }
 }
 
 footer {
@@ -339,6 +392,23 @@ footer {
       }
       & ul li {
         display: none;
+      }
+    }
+  }
+
+  #main-section {
+    & .main-container {
+      grid-template-columns: 1fr;
+      & .description {
+
+        & h2 {
+          font-size: 2.2em;
+        }
+
+        & p {
+          margin: 0;
+          font-size: 1.2em;
+        }
       }
     }
   }

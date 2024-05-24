@@ -35,6 +35,16 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 3em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 #slide-menu {
   z-index: 3;
   position: fixed;
@@ -147,7 +157,9 @@ body {
 }
 
 #header {
-  position: sticky;
+  z-index: 5;
+  width: 100%;
+  position: fixed;
   top: 0;
   padding: 0 1em;
   height: 4em;
@@ -155,7 +167,7 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--fg-color);
-  background-color: var(--champagne-pink-2);
+  background-color: var(--seashell);
   border-bottom: 2px solid var(--fg-color-tp);
 }
 #header nav {
@@ -180,13 +192,13 @@ body {
 }
 #header nav #logo-title #page-name {
   font-size: 2em;
-  font-weight: 600;
+  font-weight: 700;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #header nav #nav-links {
-  min-width: 22%;
+  min-width: 20%;
 }
 #header nav ul {
   width: 100%;
@@ -271,15 +283,37 @@ body {
 }
 
 section {
+  position: relative;
+  padding: 0 1em;
   height: 100vh;
+  border-bottom: 2px solid var(--fg-color-tp);
 }
 
 #main-section {
-  background-color: var(--lion);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/uuunion.svg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
-#second-section {
-  background-color: var(--copper);
+#main-section .main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#main-section .main-container .description {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1em;
+}
+#main-section .main-container .description h2 {
+  font-size: 2.8em;
+}
+#main-section .main-container .description p {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 500;
 }
 
 footer {
@@ -297,6 +331,16 @@ footer {
   }
   #header #nav-links ul li {
     display: none;
+  }
+  #main-section .main-container {
+    grid-template-columns: 1fr;
+  }
+  #main-section .main-container .description h2 {
+    font-size: 2.2em;
+  }
+  #main-section .main-container .description p {
+    margin: 0;
+    font-size: 1.2em;
   }
 }
 
