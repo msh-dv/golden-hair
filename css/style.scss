@@ -18,18 +18,6 @@
   --copper: #af7d42ff;
 }
 
-// #svg1 {
-//   width: 9em;
-//   height: 9em;
-//   position: absolute;
-//   right: 1em;
-//   top: calc(50% - 9em);
-
-//   & path{
-//     fill:var(--main-color);
-//   }
-// }
-
 *,
 *::before,
 *::after {
@@ -338,8 +326,6 @@ section {
   position: relative;
   padding: 0 1em;
   height: 100vh;
-  // background-color: var(--seashell);
-  border-bottom: 2px solid var(--fg-color-tp);
 }
 
 #main-section {
@@ -368,8 +354,98 @@ section {
       & p {
         margin: 0;
         font-size: 1.3em;
-	font-weight: 500;
+        font-weight: 500;
+      }
+    }
+  }
+}
 
+#second-section {
+  height: 100vh;
+  & .product {
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    & p {
+      margin: 0;
+    }
+
+    & .product-image {
+      overflow: hidden;
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+      }
+    }
+
+    & .product-info {
+      padding: 2em;
+      display: flex;
+      flex-flow: column wrap;
+      gap: 1em;
+      background: linear-gradient(
+        45deg,
+        var(--champagne-pink),
+        var(--champagne-pink-2)
+      );
+
+      & span {
+        font-size: 1.1em;
+      }
+
+      & .product-title {
+        font-size: 1.5em;
+      }
+      & .product-description {
+        font-size: 1.3em;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      & .price-count {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & .product-price {
+          font-size: 1.8em;
+        }
+        & .product-count {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 1em;
+          border: 2px solid var(--main-color);
+          background-color: var(--seashell);
+          padding: 0.5em 1em;
+          border-radius: 1em;
+
+          & .count {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          & button {
+            cursor: pointer;
+            background-color: transparent;
+            font-size: 1.5em;
+            font-weight: 500;
+            border: none;
+          }
+
+          & p {
+            pointer-events: none;
+          }
+        }
+      }
+      & .product-pay {
       }
     }
   }
@@ -399,8 +475,12 @@ footer {
   #main-section {
     & .main-container {
       grid-template-columns: 1fr;
-      & .description {
 
+      & #golden-products-logo {
+        display: none;
+      }
+
+      & .description {
         & h2 {
           font-size: 2.2em;
         }
@@ -410,6 +490,12 @@ footer {
           font-size: 1.2em;
         }
       }
+    }
+  }
+  #second-section {
+    height: auto;
+    & .product {
+      grid-template-columns: 1fr;
     }
   }
 }
