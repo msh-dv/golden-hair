@@ -190,6 +190,28 @@ h3 {
   background-color: var(--seashell);
   border-bottom: 2px solid var(--fg-color-tp);
 
+  & #drop-menu {
+    margin-top:4em;
+    min-width: 15%;
+    height: 16em;
+    position: absolute;
+    right: 0;
+    top:0;
+    background-color: var(--seashell);
+    border: 2px solid var(--main-color);
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    transform: translateY(-100%);
+    visibility: hidden;
+
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    align-items: center;
+
+    overflow: scroll;
+  }
+
   & nav {
     width: 100%;
     display: flex;
@@ -224,7 +246,7 @@ h3 {
     }
 
     & #nav-links {
-      min-width: 20%;
+      min-width: 26%;
     }
 
     & ul {
@@ -342,6 +364,21 @@ section {
     display: grid;
     grid-template-columns: 2fr 1fr;
 
+    & #logo {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      align-items: center;
+
+      & svg {
+        position: absolute;
+        width: 18em;
+        height: 18em;
+        fill: var(--main-color);
+        filter: drop-shadow(12px 12px 8px #74482673);
+      }
+    }
+
     & .description {
       display: flex;
       flex-flow: column wrap;
@@ -372,6 +409,10 @@ section {
 
     & p {
       margin: 0;
+    }
+
+    & .category {
+      text-decoration: underline;
     }
 
     & .product-image {
