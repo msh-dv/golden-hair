@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 :root {
-  --bg-color: #edf0e7;
   --fg-color: #2a1f1e;
   --fg-color-tp: #2a1f1e5a;
   --main-color: #744826;
@@ -183,11 +182,15 @@ h3 {
   transition: 0.3s ease-in-out;
   transform: translateY(-100%);
   visibility: hidden;
+  box-shadow: 0 3px 8px 2px var(--fg-color-tp);
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  overflow: scroll;
+  flex-flow: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+#header #drop-menu .drop-item {
+  border: inherit;
+  min-height: 50%;
 }
 #header nav {
   width: 100%;
@@ -197,17 +200,6 @@ h3 {
 #header nav #logo-title {
   display: flex;
   gap: 0.5em;
-}
-#header nav #logo-title #logo {
-  width: 4em;
-  height: 4em;
-}
-#header nav #logo-title #logo svg {
-  width: 4em;
-  height: 4em;
-}
-#header nav #logo-title #logo svg path {
-  fill: var(--main-color);
 }
 #header nav #logo-title #page-name {
   font-size: 2em;
@@ -347,12 +339,58 @@ section {
   font-weight: 500;
 }
 
+#caracteristicas {
+  margin-top: 4em;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#caracteristicas .gallery {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "natural natural natural organico" "cf cf sp sp";
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+#caracteristicas .gallery div {
+  font-size: 2.3em;
+  font-style: italic;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--fg-color-tp);
+  border-radius: 0.3em;
+}
+#caracteristicas .gallery div p {
+  margin: 0;
+}
+#caracteristicas .gallery .data-1 {
+  grid-area: natural;
+  background-color: var(--olivine);
+}
+#caracteristicas .gallery .data-2 {
+  grid-area: organico;
+  background-color: var(--tiffany-blue);
+}
+#caracteristicas .gallery .data-3 {
+  grid-area: cf;
+  background-color: var(--tiffany-blue);
+}
+#caracteristicas .gallery .data-4 {
+  grid-area: sp;
+  background-color: var(--champagne-pink);
+}
+
 #second-section {
   height: 100vh;
 }
 #second-section .product {
   height: 90%;
-  border: 2px solid black;
+  border: 2px solid var(--fg-color-tp);
   border-radius: 0.5em;
   margin-top: 4em;
   display: grid;
@@ -370,7 +408,7 @@ section {
 #second-section .product .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: scale-down;
+  object-fit: fill;
   border-top-left-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
 }
@@ -379,6 +417,8 @@ section {
   display: flex;
   flex-flow: column wrap;
   gap: 1em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
   background: linear-gradient(45deg, var(--champagne-pink), var(--champagne-pink-2));
 }
 #second-section .product .product-info span {
@@ -429,10 +469,14 @@ section {
 }
 
 footer {
+  background-color: var(--main-color);
   height: 50vh;
 }
 
 @media screen and (max-width: 768px) {
+  #header nav #logo-title #page-name {
+    font-size: 1.8em;
+  }
   #header #nav-links ul {
     width: fit-content;
     justify-content: center;
@@ -444,8 +488,14 @@ footer {
   #header #nav-links ul li {
     display: none;
   }
+  #header #drop-menu {
+    width: 50%;
+  }
   #main-section .main-container {
     grid-template-columns: 1fr;
+  }
+  #main-section .main-container #logo {
+    display: none;
   }
   #main-section .main-container #golden-products-logo {
     display: none;
