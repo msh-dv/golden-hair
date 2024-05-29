@@ -145,10 +145,10 @@ h3 {
   border: none;
   border-radius: 50%;
 }
-#slide-menu button:hover {
+#slide-menu button :hover {
   background-color: var(--champagne-pink-2);
 }
-#slide-menu button:active {
+#slide-menu button :active {
   background-color: var(--champagne-pink);
 }
 #slide-menu button svg {
@@ -424,6 +424,10 @@ section {
 #second-section .product .product-info .price-count .product-count p {
   pointer-events: none;
 }
+#second-section .product .product-info .product-pay {
+  display: flex;
+}
+
 footer {
   height: 50vh;
 }

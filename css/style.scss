@@ -60,18 +60,18 @@ h3 {
   transition: 0.3s;
   transform: translateX(100%);
 
-  // & * {
+  //  * {
   //   border: 1px solid black;
   // }
 
-  & nav {
+  nav {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 80%;
 
-    & ul {
+    ul {
       width: 100%;
       height: 100%;
       list-style: none;
@@ -83,8 +83,8 @@ h3 {
       justify-content: center;
       align-items: center;
 
-      & li {
-        & a {
+      li {
+        a {
           position: relative;
           color: var(--fg-color);
           text-decoration: none;
@@ -111,20 +111,20 @@ h3 {
         }
       }
 
-      & #shop-bag {
+      #shop-bag {
         position: relative;
         width: 2.5em;
         height: 2.5em;
 
-        & svg {
+        svg {
           width: 2.5em;
           height: 2.5em;
-          & path {
+          path {
             stroke: var(--fg-color);
           }
         }
 
-        & #product-count {
+        #product-count {
           position: absolute;
           top: 0;
           right: -0.3em;
@@ -134,7 +134,7 @@ h3 {
           justify-content: center;
           align-items: center;
 
-          & #bag-products {
+          #bag-products {
             pointer-events: none;
             font-size: 0.8em;
             color: var(--fg-color);
@@ -151,7 +151,7 @@ h3 {
     }
   }
 
-  & button {
+  button {
     padding: 0.5em;
     position: absolute;
     top: 1em;
@@ -162,14 +162,14 @@ h3 {
     border: none;
     border-radius: 50%;
 
-    &:hover {
+    :hover {
       background-color: var(--champagne-pink-2);
     }
-    &:active {
+    :active {
       background-color: var(--champagne-pink);
     }
 
-    & svg {
+    svg {
       width: 2.5em;
       height: 2.5em;
     }
@@ -190,13 +190,13 @@ h3 {
   background-color: var(--seashell);
   border-bottom: 2px solid var(--fg-color-tp);
 
-  & #drop-menu {
-    margin-top:4em;
+  #drop-menu {
+    margin-top: 4em;
     min-width: 15%;
     height: 16em;
     position: absolute;
     right: 0;
-    top:0;
+    top: 0;
     background-color: var(--seashell);
     border: 2px solid var(--main-color);
     opacity: 1;
@@ -205,37 +205,37 @@ h3 {
     visibility: hidden;
 
     display: flex;
-    flex-flow:row wrap;
-    justify-content:center;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
 
     overflow: scroll;
   }
 
-  & nav {
+  nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
 
-    & #logo-title {
+    #logo-title {
       display: flex;
       gap: 0.5em;
 
-      & #logo {
+      #logo {
         width: 4em;
         height: 4em;
 
-        & svg {
+        svg {
           width: 4em;
           height: 4em;
 
-          & path {
+          path {
             fill: var(--main-color);
           }
         }
       }
 
-      & #page-name {
+      #page-name {
         font-size: 2em;
         font-weight: 700;
 
@@ -245,11 +245,11 @@ h3 {
       }
     }
 
-    & #nav-links {
+    #nav-links {
       min-width: 26%;
     }
 
-    & ul {
+    ul {
       width: 100%;
       list-style: none;
       padding: 0;
@@ -258,21 +258,21 @@ h3 {
       justify-content: space-between;
       align-items: center;
 
-      & #menu {
+      #menu {
         cursor: pointer;
         pointer-events: auto;
         display: none;
         width: 2.5em;
         height: 2.5em;
 
-        & svg {
+        svg {
           width: inherit;
           height: inherit;
         }
       }
 
-      & li {
-        & a {
+      li {
+        a {
           position: relative;
           color: var(--fg-color);
           text-decoration: none;
@@ -299,21 +299,21 @@ h3 {
         }
       }
 
-      & #shop-bag {
+      #shop-bag {
         cursor: pointer;
         position: relative;
         width: 2.5em;
         height: 2.5em;
 
-        & svg {
+        svg {
           width: 2.5em;
           height: 2.5em;
-          & path {
+          path {
             stroke: var(--fg-color);
           }
         }
 
-        & #product-count {
+        #product-count {
           position: absolute;
           top: 0;
           right: -0.5em;
@@ -323,7 +323,7 @@ h3 {
           justify-content: center;
           align-items: center;
 
-          & #bag-products {
+          #bag-products {
             pointer-events: none;
             font-size: 0.8em;
             color: var(--seashell);
@@ -360,17 +360,17 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
 
-  & .main-container {
+  .main-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
 
-    & #logo {
+    #logo {
       display: flex;
       justify-content: center;
       position: relative;
       align-items: center;
 
-      & svg {
+      svg {
         position: absolute;
         width: 18em;
         height: 18em;
@@ -379,16 +379,16 @@ section {
       }
     }
 
-    & .description {
+    .description {
       display: flex;
       flex-flow: column wrap;
       gap: 1em;
 
-      & h2 {
+      h2 {
         font-size: 2.8em;
       }
 
-      & p {
+      p {
         margin: 0;
         font-size: 1.3em;
         font-weight: 500;
@@ -399,7 +399,7 @@ section {
 
 #second-section {
   height: 100vh;
-  & .product {
+  .product {
     height: 90%;
     border: 2px solid black;
     border-radius: 0.5em;
@@ -407,17 +407,17 @@ section {
     display: grid;
     grid-template-columns: auto 1fr;
 
-    & p {
+    p {
       margin: 0;
     }
 
-    & .category {
+    .category {
       text-decoration: underline;
     }
 
-    & .product-image {
+    .product-image {
       overflow: hidden;
-      & img {
+      img {
         width: 100%;
         height: 100%;
         object-fit: scale-down;
@@ -426,7 +426,7 @@ section {
       }
     }
 
-    & .product-info {
+    .product-info {
       padding: 2em;
       display: flex;
       flex-flow: column wrap;
@@ -437,28 +437,28 @@ section {
         var(--champagne-pink-2)
       );
 
-      & span {
+      span {
         font-size: 1.1em;
       }
 
-      & .product-title {
+      .product-title {
         font-size: 1.5em;
       }
-      & .product-description {
+      .product-description {
         font-size: 1.3em;
         font-style: italic;
         font-weight: 500;
       }
 
-      & .price-count {
+      .price-count {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        & .product-price {
+        .product-price {
           font-size: 1.8em;
         }
-        & .product-count {
+        .product-count {
           display: flex;
           flex-flow: row wrap;
           gap: 1em;
@@ -467,13 +467,13 @@ section {
           padding: 0.5em 1em;
           border-radius: 1em;
 
-          & .count {
+          .count {
             display: flex;
             justify-content: center;
             align-items: center;
           }
 
-          & button {
+          button {
             cursor: pointer;
             background-color: transparent;
             font-size: 1.5em;
@@ -481,12 +481,13 @@ section {
             border: none;
           }
 
-          & p {
+          p {
             pointer-events: none;
           }
         }
       }
-      & .product-pay {
+      .product-pay {
+	display: flex;
       }
     }
   }
@@ -498,35 +499,35 @@ footer {
 
 @media screen and (max-width: 768px) {
   #header {
-    & #nav-links {
-      & ul {
+    #nav-links {
+      ul {
         width: fit-content;
         justify-content: center;
         gap: 1em;
-        & #menu {
+        #menu {
           display: block;
         }
       }
-      & ul li {
+      ul li {
         display: none;
       }
     }
   }
 
   #main-section {
-    & .main-container {
+    .main-container {
       grid-template-columns: 1fr;
 
-      & #golden-products-logo {
+      #golden-products-logo {
         display: none;
       }
 
-      & .description {
-        & h2 {
+      .description {
+        h2 {
           font-size: 2.2em;
         }
 
-        & p {
+        p {
           margin: 0;
           font-size: 1.2em;
         }
@@ -535,7 +536,7 @@ footer {
   }
   #second-section {
     height: auto;
-    & .product {
+    .product {
       grid-template-columns: 1fr;
     }
   }
