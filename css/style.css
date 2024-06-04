@@ -28,6 +28,8 @@ html {
 }
 
 body {
+  width: 100%;
+  font-size: 1.1em;
   color: var(--fg-color);
   background-color: var(--seashell);
   margin: 0;
@@ -42,6 +44,145 @@ h1,
 h2,
 h3 {
   margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+#contact {
+  height: 80vh;
+  font-size: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact form {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+}
+#contact form label {
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  width: 100%;
+}
+#contact form label input {
+  border: 2px solid var(--fg-color-tp);
+  border-radius: 0.3em;
+  padding: 0.3em;
+  font-size: 0.7em;
+  width: 90%;
+}
+#contact form button {
+  font-size: 0.7em;
+  border: none;
+  color: var(--seashell);
+  font-weight: bold;
+  padding: 0.4em;
+  background-color: var(--main-color);
+  border-radius: 0.3em;
+  width: fit-content;
+  height: fit-content;
+}
+
+#pop-menu {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5098039216);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  transition: 0.3s;
+}
+#pop-menu .popup-menu {
+  position: relative;
+  border-radius: 0.3em;
+  width: fit-content;
+  height: 86%;
+  background-color: var(--seashell);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+}
+#pop-menu .popup-menu #close-pop-menu {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+#pop-menu .popup-menu .pop-image-cont {
+  height: 100%;
+  width: 100%;
+}
+#pop-menu .popup-menu .pop-image-cont .pop-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+#promotion {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+#promotion * {
+  background-color: var(--champagne-pink);
+}
+#promotion .pay-opts {
+  border-radius: 0.3em;
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 50vh;
+  gap: 1em;
+}
+#promotion .pay-opts h2 {
+  font-size: 2em;
+}
+#promotion .promotion {
+  display: flex;
+  flex-flow: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3em;
+  background-color: var(--champagne-pink);
+}
+#promotion .promotion svg {
+  width: 7em;
+}
+#promotion .promotion .pay {
+  display: flex;
+  gap: 1em;
+}
+#promotion #about {
+  font-size: 1.4em;
+  border: none;
+  color: var(--seashell);
+  font-weight: bold;
+  padding: 0.5em;
+  background-color: var(--main-color);
+  border-radius: 0.3em;
 }
 
 #slide-menu {
@@ -209,7 +350,7 @@ h3 {
   align-items: center;
 }
 #header nav #nav-links {
-  min-width: 26%;
+  min-width: 23%;
 }
 #header nav ul {
   width: 100%;
@@ -294,12 +435,14 @@ h3 {
 }
 
 section {
+  margin: 4em 0;
   position: relative;
   padding: 0 1em;
   height: 100vh;
 }
 
 #main-section {
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,13 +483,13 @@ section {
 }
 
 #caracteristicas {
-  margin-top: 4em;
-  padding: 1em;
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #caracteristicas .gallery {
+  padding: 1em;
   width: 100%;
   height: 100%;
   display: grid;
@@ -364,6 +507,10 @@ section {
   align-items: center;
   border: 2px solid var(--fg-color-tp);
   border-radius: 0.3em;
+  transition: 0.3s;
+}
+#caracteristicas .gallery div:hover {
+  transform: scale(1.01);
 }
 #caracteristicas .gallery div p {
   margin: 0;
@@ -386,7 +533,7 @@ section {
 }
 
 #second-section {
-  height: 100vh;
+  height: 80vh;
 }
 #second-section .product {
   height: 90%;
@@ -413,59 +560,39 @@ section {
   border-bottom-left-radius: 0.5em;
 }
 #second-section .product .product-info {
-  padding: 2em;
   display: flex;
   flex-flow: column wrap;
-  gap: 1em;
+  justify-content: space-around;
+  padding: 2em;
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
-  background: linear-gradient(45deg, var(--champagne-pink), var(--champagne-pink-2));
+  background: linear-gradient(45deg, var(--seashell), var(--fawn));
 }
 #second-section .product .product-info span {
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 #second-section .product .product-info .product-title {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 #second-section .product .product-info .product-description {
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-style: italic;
   font-weight: 500;
+}
+#second-section .product .product-info .buy {
+  font-size: 1.5em;
+  border: none;
+  border-radius: 0.3em;
+  color: var(--seashell);
+  background-color: var(--main-color);
+  padding: 0.3em 0.5em;
+  width: fit-content;
+  height: fit-content;
 }
 #second-section .product .product-info .price-count {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-#second-section .product .product-info .price-count .product-price {
-  font-size: 1.8em;
-}
-#second-section .product .product-info .price-count .product-count {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1em;
-  border: 2px solid var(--main-color);
-  background-color: var(--seashell);
-  padding: 0.5em 1em;
-  border-radius: 1em;
-}
-#second-section .product .product-info .price-count .product-count .count {
-  display: flex;
   justify-content: center;
-  align-items: center;
-}
-#second-section .product .product-info .price-count .product-count button {
-  cursor: pointer;
-  background-color: transparent;
-  font-size: 1.5em;
-  font-weight: 500;
-  border: none;
-}
-#second-section .product .product-info .price-count .product-count p {
-  pointer-events: none;
-}
-#second-section .product .product-info .product-pay {
-  display: flex;
 }
 
 footer {
@@ -474,6 +601,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
   #header nav #logo-title #page-name {
     font-size: 1.8em;
   }
@@ -507,12 +637,65 @@ footer {
     margin: 0;
     font-size: 1.2em;
   }
+  #promotion {
+    font-size: 0.9em;
+    display: flex;
+    flex-flow: column;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+  #promotion * {
+    background-color: var(--champagne-pink);
+  }
+  #promotion .pay-opts {
+    width: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: 70vh;
+    gap: 1em;
+  }
+  #promotion .pay-opts h2 {
+    font-size: 2em;
+  }
+  #promotion .promotion {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3em;
+    background-color: var(--champagne-pink);
+  }
+  #promotion .promotion svg {
+    width: 5em;
+  }
+  #promotion .promotion .pay {
+    display: flex;
+    gap: 1em;
+  }
+  #promotion #about {
+    font-size: 1.4em;
+    border: none;
+    color: var(--seashell);
+    font-weight: bold;
+    padding: 0.5em;
+    background-color: var(--main-color);
+    border-radius: 0.3em;
+  }
+  #caracteristicas {
+    text-align: center;
+    font-size: 1.3em;
+  }
   #caracteristicas .gallery {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-areas: "natural natural organico organico" "cf cf cf cf" "sp sp sp sp";
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "natural natural natural natural" "organico organico organico organico" "cf cf cf cf" "sp sp sp sp";
+    grid-template-rows: repeat(4, 1fr);
     gap: 1em;
   }
   #caracteristicas .gallery div {
@@ -549,6 +732,9 @@ footer {
   }
   #second-section .product {
     grid-template-columns: 1fr;
+  }
+  #contact {
+    font-size: 1.3em;
   }
 }
 
